@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Interface</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex items-center justify-center h-screen">
+    <div class="bg-white shadow-md rounded-lg p-6 w-96">
+        <h1 class="text-xl font-bold mb-4">Chatbot</h1>
+        <div id="chat-window" class="h-64 overflow-y-auto border border-gray-300 p-2 mb-4">
+            <!-- Chat messages will be displayed here -->
+        </div>
+        <input type="text" id="user-input" class="border border-gray-300 p-2 w-full rounded" placeholder="Type your message...">
+        <button id="send-button" class="bg-blue-500 text-white p-2 rounded mt-2 w-full">Send</button>
+    </div>
+
+    <script>
+        document.getElementById('send-button').addEventListener('click', function() {
+            const userInput = document.getElementById('user-input').value;
+            if (userInput) {
+                // Display user message
+                const chatWindow = document.getElementById('chat-window');
+                chatWindow.innerHTML += `<div class="text-right text-blue-600">${userInput}</div>`;
+                document.getElementById('user-input').value = '';
+
+                // Send message to backend (placeholder for actual implementation)
+                // Here you would typically use fetch or AJAX to send the message to your backend
+                // and get the response to display in the chat window.
+            }
+        });
+    </script>
+</body>
+</html>
