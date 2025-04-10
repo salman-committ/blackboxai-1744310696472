@@ -1,0 +1,171 @@
+{
+   "intents":[
+      {
+         "tag":"greeting",
+         "patterns":[
+            "Hi",
+            "How are you?",
+            "Is anyone there?",
+            "Hello",
+            "Good day",
+            "What's up",
+            "how are ya",
+            "heyy",
+            "whatsup"
+         ],
+         "responses":[
+            "Hello! Welcome to Nhi Yen Fashion Shop. How can I assist you today?",
+            "Hi there! I'm here to help you find the perfect fashion items. What are you looking for?",
+            "Welcome to our fashion boutique! How may I help you today?"
+         ]
+      },
+      {
+         "tag":"name",
+         "patterns":[
+            "name",
+            "your name",
+            "do you have a name",
+            "what are you called",
+            "what is your name",
+            "what should I call you",
+            "whats your name?",
+            "what are you",
+            "who are you",
+            "who is this"
+         ],
+         "responses":[
+            "I am Yumaris, your fashion shopping assistant at Nhi Yen.",
+            "You can call me Yumaris! I'm here to help you find the perfect fashion items.",
+            "I'm Yumaris, your personal shopping assistant at Nhi Yen Fashion Shop."
+         ]
+      },
+      {
+         "tag":"womens_clothing",
+         "patterns":[
+            "show me women's clothes",
+            "what women's clothing do you have",
+            "women's fashion",
+            "dresses for women",
+            "women's collection",
+            "show me dresses",
+            "women's wear"
+         ],
+         "responses":[
+            "In our women's collection, we offer T-shirts ($20), Elegant Evening Gowns ($150), Floral Summer Dresses ($45), and Professional Blazers ($80). Would you like details about any specific item?"
+         ]
+      },
+      {
+         "tag":"mens_clothing",
+         "patterns":[
+            "show me men's clothes",
+            "what men's clothing do you have",
+            "men's fashion",
+            "suits for men",
+            "men's collection",
+            "men's wear"
+         ],
+         "responses":[
+            "Our men's collection includes Classic Suit Sets ($200), Casual Denim Jeans ($35), and Polo Shirt Collections ($25). Would you like to know more about any of these items?"
+         ]
+      },
+      {
+         "tag":"accessories",
+         "patterns":[
+            "show me accessories",
+            "what accessories do you have",
+            "bags and watches",
+            "sunglasses",
+            "handbags"
+         ],
+         "responses":[
+            "We have Stylish Sunglasses ($20), Leather Handbags ($60), and Classic Wristwatches ($50) in various colors. Which would you like to know more about?"
+         ]
+      },
+      {
+         "tag":"footwear",
+         "patterns":[
+            "show me shoes",
+            "what footwear do you have",
+            "boots",
+            "sneakers",
+            "formal shoes"
+         ],
+         "responses":[
+            "Our footwear collection includes High-Heel Ankle Boots ($70), Comfortable Sneakers ($55), and Formal Leather Shoes ($90). Would you like specific details about any of these?"
+         ]
+      },
+      {
+         "tag":"kids",
+         "patterns":[
+            "kids clothes",
+            "children's wear",
+            "baby clothes",
+            "what do you have for kids",
+            "children's collection"
+         ],
+         "responses":[
+            "For kids, we have Cute Cartoon T-shirts ($15), Adorable Onesies ($25), and Trendy Kids' Backpacks ($30). Would you like to know more about our children's collection?"
+         ]
+      },
+      {
+         "tag":"activewear",
+         "patterns":[
+            "workout clothes",
+            "gym wear",
+            "sports clothing",
+            "activewear",
+            "athletic wear"
+         ],
+         "responses":[
+            "Our activewear includes Yoga Leggings ($30), Running Shoes ($40), and Quick-Dry Sports T-shirts ($20). What type of activewear are you looking for?"
+         ]
+      },
+      {
+         "tag":"prices",
+         "patterns":[
+            "how much is",
+            "price",
+            "cost",
+            "pricing",
+            "how much does it cost"
+         ],
+         "responses":[
+            "Our prices range from $15 for kids' t-shirts to $200 for men's suits. Which item's price would you like to know specifically?"
+         ]
+      },
+      {
+         "tag":"sizes",
+         "patterns":[
+            "what sizes do you have",
+            "available sizes",
+            "size guide",
+            "do you have my size"
+         ],
+         "responses":[
+            "Most of our clothing items come in Small, Medium, Large, and XL. For shoes, we typically carry sizes 6-12. Which item would you like size information for?"
+         ]
+      },
+      {
+         "tag":"goodbye",
+         "patterns":[
+            "cya",
+            "see you",
+            "bye bye",
+            "See you later",
+            "Goodbye",
+            "I am Leaving",
+            "Bye",
+            "Have a Good day",
+            "talk to you later",
+            "ttyl",
+            "i got to go",
+            "gtg"
+         ],
+         "responses":[
+            "Thank you for shopping with Nhi Yen Fashion! Have a great day!",
+            "Thanks for visiting our fashion shop. Come back soon!",
+            "Goodbye! We hope to see you again at Nhi Yen Fashion!"
+         ]
+      }
+   ]
+}
