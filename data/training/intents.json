@@ -1,0 +1,211 @@
+{
+    "intents": [
+        {
+            "tag": "product_search",
+            "patterns": [
+                "Show me products",
+                "I want to buy",
+                "Do you have",
+                "I'm looking for",
+                "Search products",
+                "Browse catalog",
+                "Find items",
+                "Product categories",
+                "What's available",
+                "Show me what you sell"
+            ],
+            "responses": [
+                "I can help you find the perfect product. What category are you interested in?",
+                "We have a wide range of products. What type of item are you looking for?",
+                "Let me help you find what you need. Could you specify the product category?",
+                "I'd be happy to show you our products. What are you shopping for today?"
+            ]
+        },
+        {
+            "tag": "product_inquiry",
+            "patterns": [
+                "Show me the product picture and price for {product_name}",
+                "What is the price of {product_name}?",
+                "Can you show me {product_name}?"
+            ],
+            "responses": [
+                "Let me fetch the details for {product_name}.",
+                "I will get the product picture and price for {product_name}."
+            ]
+        },
+        {
+            "tag": "photo_upload",
+            "patterns": [
+                "I want to upload a photo",
+                "How do I share an image",
+                "Can I send a picture",
+                "Upload image",
+                "Share photo",
+                "Send picture",
+                "Upload a photo",
+                "Share an image",
+                "Picture upload",
+                "Image sharing",
+                "Photo sharing",
+                "Upload pictures",
+                "Share images",
+                "Add photo",
+                "Add image"
+            ],
+            "responses": [
+                "You can upload photos by clicking the attachment button or dragging and dropping the image.",
+                "Please use the upload button to share your photos.",
+                "I can process images that you upload using the attachment feature.",
+                "To share your photo, click the upload button or drag and drop it here.",
+                "You can upload your image using the attachment feature.",
+                "Simply click the upload button to share your photo with me."
+            ]
+        },
+        {
+            "tag": "voice_message",
+            "patterns": [
+                "Can I send voice message",
+                "How to record audio",
+                "Voice note",
+                "Send audio",
+                "Record message",
+                "Voice recording",
+                "Send voice note",
+                "Record voice message",
+                "How do I record a message",
+                "Voice chat",
+                "Audio message",
+                "Record audio message",
+                "Send voice",
+                "Make voice recording",
+                "Voice memo"
+            ],
+            "responses": [
+                "You can send voice messages by clicking the microphone icon and holding to record.",
+                "To send a voice message, press and hold the microphone button.",
+                "Voice messages can be recorded using the microphone feature.",
+                "Click the microphone button and hold it while speaking to record your message.",
+                "Recording a voice message is easy - just press and hold the mic button.",
+                "Use the microphone feature to record and send your voice message."
+            ]
+        },
+        {
+            "tag": "greeting",
+            "patterns": [
+                "Hi",
+                "Hey",
+                "Hello",
+                "Good day",
+                "How are you",
+                "Is anyone there?",
+                "Hello there",
+                "Greetings",
+                "What's up?",
+                "How's it going?",
+                "Howdy",
+                "Good to see you",
+                "What's new?",
+                "Hi there",
+                "Hey there"
+            ],
+            "responses": [
+                "Hello! How can I help you with your shopping today?",
+                "Hi there! Looking for something specific?",
+                "Hello! I'm here to assist you with your shopping needs.",
+                "Greetings! How can I assist you today?",
+                "Hey! What can I do for you?",
+                "Good to see you! How can I help?",
+                "What's up? How can I assist you today?"
+            ]
+        },
+        {
+            "tag": "price_inquiry",
+            "patterns": [
+                "How much is",
+                "What's the price of",
+                "How much does it cost",
+                "Price check",
+                "Is it expensive",
+                "Tell me the price"
+            ],
+            "responses": [
+                "I can help you check the price. Could you specify the product?",
+                "Let me look up that price for you.",
+                "I'll check our current pricing for that item."
+            ]
+        },
+        {
+            "tag": "order_status",
+            "patterns": [
+                "Where is my order",
+                "Track my package",
+                "When will I receive my order",
+                "Order status",
+                "Is my order shipped",
+                "Delivery status"
+            ],
+            "responses": [
+                "I can help you track your order. Please provide your order number.",
+                "Let me check the status of your order.",
+                "I'll help you track your package."
+            ]
+        },
+        {
+            "tag": "return_policy",
+            "patterns": [
+                "I want to return",
+                "How do returns work",
+                "Return policy",
+                "Can I exchange",
+                "Refund policy",
+                "How to return item"
+            ],
+            "responses": [
+                "Our return policy allows returns within 30 days of purchase. Would you like more details?",
+                "I can help you with the return process. Do you have your order number?",
+                "Let me explain our return policy and help you process your return."
+            ]
+        },
+        {
+            "tag": "shipping_info",
+            "patterns": [
+                "Shipping cost",
+                "How long does shipping take",
+                "Delivery options",
+                "Do you ship to",
+                "Shipping methods",
+                "International shipping"
+            ],
+            "responses": [
+                "We offer various shipping options. Standard shipping takes 3-5 business days.",
+                "Let me check the shipping options available for your location.",
+                "I can help you with shipping information and costs."
+            ]
+        },
+        {
+            "tag": "goodbye",
+            "patterns": [
+                "Bye",
+                "See you",
+                "Goodbye",
+                "Thanks bye",
+                "Thank you, goodbye",
+                "That's all",
+                "Bye bye",
+                "Have a good day",
+                "See you later",
+                "I'm done",
+                "Exit",
+                "End chat",
+                "Finish"
+            ],
+            "responses": [
+                "Thank you for shopping with us! Have a great day!",
+                "Goodbye! Feel free to return if you need more assistance.",
+                "Thanks for chatting! Come back soon!",
+                "Have a wonderful day! Come back anytime.",
+                "Thank you for visiting. See you again soon!"
+            ]
+        }
+    ]
+}
