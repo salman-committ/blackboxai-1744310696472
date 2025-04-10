@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body class="bg-gray-100 font-['Inter']">
+    <div class="chat-container min-h-[90vh] p-6">
+        <!-- Header -->
+        <div class="flex items-center justify-between mb-6">
+            <div class="flex items-center">
+                <i class="fas fa-robot text-3xl text-blue-500 mr-3"></i>
+                <h1 class="text-2xl font-semibold">AI Assistant</h1>
+            </div>
+            <div class="flex space-x-2">
+                <button id="clear-chat" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-lg transition-colors">
+                    <i class="fas fa-trash-alt mr-2"></i>Clear Chat
+                </button>
+            </div>
+        </div>
+
+        <!-- Chat Messages -->
+        <div id="chat-messages" class="h-[calc(90vh-200px)] overflow-y-auto mb-6 p-4">
+            <!-- Welcome message -->
+            <div class="message bot-message message-animation">
+                <p>👋 Hi! I'm your AI assistant. How can I help you today?</p>
+            </div>
+        </div>
+
+        <!-- Input Area -->
+        <div class="bg-white p-4 rounded-lg shadow-sm">
+            <div class="flex items-center space-x-4">
+                <div class="flex-1 relative">
+                    <input type="text" id="user-input" 
+                           class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors"
+                           placeholder="Type your message here...">
+                    <button id="voice-input" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-500 hover:text-blue-500">
+                        <i class="fas fa-microphone"></i>
+                    </button>
+                </div>
+                <button id="send-message" class="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg transition-colors flex items-center">
+                    <i class="fas fa-paper-plane mr-2"></i>
+                    Send
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatMessages = document.getElementById('chat-messages');
+            const userInput = document.getElementById('user-input');
+            const sendButton = document.getElementById('send-message');
+            const clearButton = document.getElementById('clear-chat');
+            const voiceButton = document.getElementById('voice-input');
+
+            function addMessage(message, isUser = false) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message message-animation ${isUser ? 'user-message' : 'bot-message'}`;
+                messageDiv.innerHTML = `<p>${message}</p>`;
+                chatMessages.appendChild(messageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+
+            function showTypingIndicator() {
+                const indicator = document.createElement('div');
+                indicator.className = 'typing-indicator message-animation';
+                indicator.innerHTML = `
+                    <span class="typing-dot dot-1"></span>
+                    <span class="typing-dot dot-2"></span>
+                    <span class="typing-dot dot-3"></span>
+                `;
+                chatMessages.appendChild(indicator);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+                return indicator;
+            }
+
+            async function sendMessage() {
+                const message = userInput.value.trim();
+                if (!message) return;
+
+                // Add user message
+                addMessage(message, true);
+                userInput.value = '';
+
+                // Show typing indicator
+                const typingIndicator = showTypingIndicator();
+
+                try {
+                    // Send message to backend
+                    const response = await fetch('/chat', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ message: message })
+                    });
+
+                    const data = await response.json();
+                    
+                    // Remove typing indicator
+                    typingIndicator.remove();
+
+                    // Add bot response
+                    addMessage(data.response);
+                } catch (error) {
+                    console.error('Error:', error);
+                    typingIndicator.remove();
+                    addMessage('Sorry, I encountered an error. Please try again.');
+                }
+            }
+
+            // Event listeners
+            sendButton.addEventListener('click', sendMessage);
+            userInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') sendMessage();
+            });
+
+            clearButton.addEventListener('click', () => {
+                chatMessages.innerHTML = `
+                    <div class="message bot-message message-animation">
+                        <p>👋 Hi! I'm your AI assistant. How can I help you today?</p>
+                    </div>
+                `;
+            });
+
+            // Voice input placeholder
+            voiceButton.addEventListener('click', () => {
+                alert('Voice input feature coming soon!');
+            });
+        });
+    </script>
+</body>
+</html>
